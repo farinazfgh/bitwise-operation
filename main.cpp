@@ -1,11 +1,12 @@
 #include <iostream>
 
-uint16_t a;
-uint16_t b;
-uint16_t result = 0;
-uint16_t mask = 1;
 
-int main() {
+/*int main() {
+    uint16_t a = 10;
+    uint16_t b = 20;
+    uint16_t result = 0;
+    uint16_t mask = 1;
+
     while (mask != 0) {
         uint16_t nextmask = mask << 1;
         if (a & mask) // If A has that bit set?
@@ -29,7 +30,9 @@ int main() {
                     mask;
         }
         mask = nextmask;
+        std::cout << mask << std::endl;
+
     }
     std::cout << "Hello, bitwise operators!" << std::endl;
     return 0;
-}
+}*/
