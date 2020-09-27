@@ -1,3 +1,5 @@
+#include <inttypes.h>
+
 	uint16 a      = original_1;
 	uint16 b      = original_2;
 	uint16 result = 0;
