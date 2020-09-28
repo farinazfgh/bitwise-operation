@@ -5,13 +5,17 @@
 
 void complement(int a, int b);
 
-void shift(int a, int b);
+void logical_shift(int a, int b);
 
 void andd(int a, int b);
 
 void orr(int a, int b);
 
 void xorr(int a, int b);
+
+void logical_left_shift();
+
+void logical_right_shift();
 
 int main() {
     int a = 12, b = 25;
@@ -21,7 +25,9 @@ int main() {
     orr(a, b);
     xorr(a, b);
     complement(a, b);
-    shift(a, b);
+    logical_shift(a, b);
+    logical_left_shift();
+    logical_right_shift();
     return 0;
 }
 
@@ -52,6 +58,28 @@ void andd(int a, int b) {
     std::cout << "a & b = " << (a & b) << std::endl;
 }
 
+void logical_left_shift() {
+
+/*
+  Left shift is equivalent to multiplying the bit pattern with  2^k( if we are shifting k bits ).
+*/
+    std::cout << "logical left shift" << std::endl;
+    std::cout << "1 << 1 = " << (1 << 1) << std::endl;
+    std::cout << "1 << 2 = " << (1 << 2) << std::endl;
+    std::cout << "1 << 4 = " << (1 << 4) << std::endl;
+}
+
+void logical_right_shift() {
+
+/*
+  Right shift is equivalent to dividing the bit pattern with 2^k( if we are shifting k bits ).
+*/
+    std::cout << "logical right shift" << std::endl;
+    std::cout << "4 >> 1 = " << (4 >> 1) << std::endl;
+    std::cout << "6 >> 1 = " << (6 >> 1) << std::endl;
+    std::cout << "16 >> 4 = " << (16 >> 4) << std::endl;
+}
+
 void orr(int a, int b) {
     /*
     00001100
@@ -72,7 +100,7 @@ void xorr(int a, int b) {
     std::cout << "a ^ b = " << (a ^ b) << std::endl;
 }
 
-void shift(int a, int b) {
+void logical_shift(int a, int b) {
 //    N >> m = [ N >> (m-1) ] / 2
 //    N << m = [ N << (m-1) ] * 2
     // declaring two integer variables
