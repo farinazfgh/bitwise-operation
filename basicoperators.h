@@ -19,9 +19,9 @@ void logical_left_shift();
 
 void logical_right_shift();
 
-bool isPowerOfTwo1(int x);
+bool is_power_of_two1(int x);
 
-bool isPowerOfTwo2(int i);
+bool is_power_of_two2(int i);
 
 void write_all_poweroftwos(int x);
 
@@ -29,7 +29,6 @@ int count_one(int n);
 
 bool check_the_ith_bit_is_set(int n, int i);
 
-class basicoperators {
-};
+void possible_subsets(char A[], int N);
 
 #endif //BITWISE_OPERATION_BASICOPERATORS_H

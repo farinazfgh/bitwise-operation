@@ -29,10 +29,10 @@ int main() {
     logical_right_shift();
     std::cout << "************************" << std::endl;
 
-    std::cout << isPowerOfTwo1(1023) << std::endl;
+    std::cout << is_power_of_two1(1023) << std::endl;
     std::cout << "************************" << std::endl;
 
-    std::cout << isPowerOfTwo2(1024) << std::endl;
+    std::cout << is_power_of_two2(1024) << std::endl;
     std::cout << "************************" << std::endl;
 
     write_all_poweroftwos(1024);
@@ -106,7 +106,7 @@ void logical_right_shift() {
 /*
  * O(logN)
  */
-bool isPowerOfTwo1(int x) {
+bool is_power_of_two1(int x) {
     if (x == 0)return false;
     while ((x % 2 == 0))x = x / 2;
     return x == 1;
@@ -115,7 +115,7 @@ bool isPowerOfTwo1(int x) {
 /*
  * O(1)
  */
-bool isPowerOfTwo2(int i) {
+bool is_power_of_two2(int i) {
     if ((i & i - 1) == 0) return true;
     return false;
 }
@@ -184,4 +184,34 @@ bool check_the_ith_bit_is_set(int n, int i) {
     std::cout << "2 power of i: " << _2poweri << std::endl;
     if (_2poweri & n)return true;
     return false;
+}
+
+/*
+    0 = (000)2 = {}
+    1 = (001)2 = {c}
+    2 = (010)2 = {b}
+    3 = (011)2 = {b, c}
+    4 = (100)2 = {a}
+    5 = (101)2 = {a, c}
+    6 = (110)2 = {a, b}
+    7 = (111)2 = {a, b, c}
+
+    possibleSubsets(A, N):
+        for i = 0 to 2^N:
+            for j = 0 to N:
+                if jth bit is set in i:
+                    print A[j]
+            print ‘\n’
+
+ there are 2^N possible subsets of any given set with N elements
+ */
+void possible_subsets(char A[], int N) {
+    for (int i = 0; i < (i << N); i++) {
+        for (int j = 0; i < N; j++) {
+            if (i & (1 << j)) {// if jth bit is set in i:
+                std::cout << A[j] << ' ';
+            }
+            std::cout << std::endl;
+        }
+    }
 }
