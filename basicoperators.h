@@ -27,6 +27,8 @@ void write_all_poweroftwos(int x);
 
 int count_one(int n);
 
+bool check_the_ith_bit_is_set(int n, int i);
+
 class basicoperators {
 };
 

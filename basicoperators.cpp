@@ -44,6 +44,12 @@ int main() {
     std::cout << count_one(8) << std::endl;
     std::cout << "************************" << std::endl;
 
+    std::cout << check_the_ith_bit_is_set(13, 2) << std::endl;
+    std::cout << "************************" << std::endl;
+
+    std::cout << check_the_ith_bit_is_set(7, 3) << std::endl;
+    std::cout << "************************" << std::endl;
+
 
     return 0;
 }
@@ -162,6 +168,7 @@ void logical_shift(int a, int b) {
         std::cout << "212 << " << i << " = " << (212 << i) << std::endl;
     }
 }
+
 //Complexity: O(K), where K is the number of ones present in the binary form of the given number. worst case O(logN)
 int count_one(int n) {
     int count = 0;
@@ -170,4 +177,11 @@ int count_one(int n) {
         count++;
     }
     return count;
+}
+
+bool check_the_ith_bit_is_set(int n, int i) {
+    int _2poweri = 1 << i;
+    std::cout << "2 power of i: " << _2poweri << std::endl;
+    if (_2poweri & n)return true;
+    return false;
 }
