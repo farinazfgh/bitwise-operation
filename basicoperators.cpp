@@ -17,17 +17,48 @@ void logical_left_shift();
 
 void logical_right_shift();
 
+bool isPowerOfTwo1(int x);
+
+bool isPowerOfTwo2(int i);
+
+void write_all_poweroftwos(int x);
+
+
 int main() {
     int a = 12, b = 25;
     std::cout << "a = " << a << std::endl;
     std::cout << "b = " << b << std::endl;
     andd(a, b);
+    std::cout << "************************" << std::endl;
+
     orr(a, b);
+    std::cout << "************************" << std::endl;
+
     xorr(a, b);
+    std::cout << "************************" << std::endl;
+
     complement(a, b);
+    std::cout << "************************" << std::endl;
+
     logical_shift(a, b);
+    std::cout << "************************" << std::endl;
+
     logical_left_shift();
+    std::cout << "************************" << std::endl;
+
     logical_right_shift();
+    std::cout << "************************" << std::endl;
+
+    std::cout << isPowerOfTwo1(1023) << std::endl;
+    std::cout << "************************" << std::endl;
+
+    std::cout << isPowerOfTwo2(1024) << std::endl;
+    std::cout << "************************" << std::endl;
+
+    write_all_poweroftwos(1024);
+    std::cout << "************************" << std::endl;
+
+
     return 0;
 }
 
@@ -78,6 +109,29 @@ void logical_right_shift() {
     std::cout << "4 >> 1 = " << (4 >> 1) << std::endl;
     std::cout << "6 >> 1 = " << (6 >> 1) << std::endl;
     std::cout << "16 >> 4 = " << (16 >> 4) << std::endl;
+}
+
+/*
+ * O(logN)
+ */
+bool isPowerOfTwo1(int x) {
+    if (x == 0)return false;
+    while ((x % 2 == 0))x = x / 2;
+    return x == 1;
+}
+
+/*
+ * O(1)
+ */
+bool isPowerOfTwo2(int i) {
+    if ((i & i - 1) == 0) return true;
+    return false;
+}
+
+void write_all_poweroftwos(int x) {
+    for (int i = 0; i <= 1024; i++) {
+        if ((i & i - 1) == 0) std::cout << "i = " << i << std::endl;
+    }
 }
 
 void orr(int a, int b) {
