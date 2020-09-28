@@ -3,26 +3,6 @@
 
 #include "basicoperators.h"
 
-void complement(int a, int b);
-
-void logical_shift(int a, int b);
-
-void andd(int a, int b);
-
-void orr(int a, int b);
-
-void xorr(int a, int b);
-
-void logical_left_shift();
-
-void logical_right_shift();
-
-bool isPowerOfTwo1(int x);
-
-bool isPowerOfTwo2(int i);
-
-void write_all_poweroftwos(int x);
-
 
 int main() {
     int a = 12, b = 25;
@@ -56,6 +36,12 @@ int main() {
     std::cout << "************************" << std::endl;
 
     write_all_poweroftwos(1024);
+    std::cout << "************************" << std::endl;
+
+    std::cout << count_one(1023) << std::endl;
+    std::cout << "************************" << std::endl;
+
+    std::cout << count_one(8) << std::endl;
     std::cout << "************************" << std::endl;
 
 
@@ -175,4 +161,13 @@ void logical_shift(int a, int b) {
     for (i = 0; i < 4; i++) {
         std::cout << "212 << " << i << " = " << (212 << i) << std::endl;
     }
+}
+//Complexity: O(K), where K is the number of ones present in the binary form of the given number. worst case O(logN)
+int count_one(int n) {
+    int count = 0;
+    while (n) {
+        n = n & (n - 1);
+        count++;
+    }
+    return count;
 }
